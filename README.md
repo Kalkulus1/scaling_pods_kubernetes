@@ -28,7 +28,22 @@ kubectl get nodes
 ### After deployment file
 ```sh
 kubectl create -f deployment.yml
+kubectl get pods
 ```
 
+### After creating service file
+```sh
+kubectl create -f service.yml
+kubectl get services
+```
+
+### Scale deployment up and down
+
+In order to scale the number of replicas up or down, we need only edit deployment.yml. Change the replicas: line from 3 to 5, then apply the changes:
+
+```sh
+kubectl apply -f deployment.yml
+```
+Now if we check with `kubectl get pods`, we'll see there are five. But what if five is too many?
 
 
